@@ -1,4 +1,5 @@
-films = {
+movies = {
+    "Tarzen": [8, 1],
     "How To Train Your Dragon": [15, 1],
     "Big Hero 6": [12, 4],
     "Your Name": [15, 2],
@@ -11,10 +12,36 @@ films = {
 while True:
     choice = input("What movie you would like to Watch?: ").strip().title()
 
-    if choice in films:
+    if choice in movies:
         age = int(input("what is your age?: ").strip())
 
-        # check user age
+        if age < 1 or age > 100:
+            print("enter valid age")
+
+        elif age >= movies[choice][0]:
+            question = (
+                input(f"would you like to buy a ticker for movie {choice} ? y/n: ")
+                .strip()
+                .capitalize()
+            )
+
+            if question == "Y" and movies[choice][1] > 0:
+                movies[choice][1] = movies[choice][1] - 1
+                print("enjoy movie")
+
+            elif movies[choice][1] == 0:
+                print("no tickets left")
+            elif question == "N":
+                pass
+
+        else:
+            print("U are young boi")
+
+    else:
+        print('we dont have that movie u r looking for "boi"!')
+
+
+"""        # check user age
         if age >= films[choice][0]:
 
             # check enough seats/tickets
@@ -23,10 +50,4 @@ while True:
                 print("Enjoy your Movie ")
                 films[choice][1] = films[choice][1] - 1
             else:
-                print("We have no seats available")
-
-        else:
-            print("U are young boi")
-
-    else:
-        print('we dont have that movie u r looking for "boi"!')
+                print("We have no seats available")"""
