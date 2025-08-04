@@ -13,30 +13,35 @@ while True:
     choice = input("What movie you would like to Watch?: ").strip().title()
 
     if choice in movies:
-        age = int(input("what is your age?: ").strip())
+        try:
+            age = int(input("what is your age?: ").strip())
 
-        if age < 1 or age > 100:
-            print("enter valid age")
+        
+            if age < 1 or age > 100:
+                print("enter valid age")
 
-        elif age >= movies[choice][0]:
-            question = (
-                input(f"would you like to buy a ticker for movie {choice} ? y/n: ")
-                .strip()
-                .capitalize()
-            )
+            elif age >= movies[choice][0]:
+                question = (
+                    input(f"would you like to buy a ticker for movie {choice} ? y/n: ")
+                    .strip()
+                    .capitalize()
+                )
 
-            if question == "Y" and movies[choice][1] > 0:
-                movies[choice][1] = movies[choice][1] - 1
-                print("enjoy movie")
+                if question == "Y" and movies[choice][1] > 0:
+                    movies[choice][1] = movies[choice][1] - 1
+                    print("enjoy movie")
 
-            elif movies[choice][1] == 0:
-                print("no tickets left")
-            elif question == "N":
-                pass
+                elif movies[choice][1] == 0:
+                    print("no tickets left")
+                elif question == "N":
+                    pass
 
-        else:
-            print("U are young boi")
+            else:
+                print("U are young boi")
 
+        except:
+            print('? invalid age! Boi')  
+    
     else:
         print('we dont have that movie u r looking for "boi"!')
 
