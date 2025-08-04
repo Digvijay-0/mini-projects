@@ -15,8 +15,7 @@ while True:
     if choice in movies:
         try:
             age = int(input("what is your age?: ").strip())
-
-        
+       
             if age < 1 or age > 100:
                 print("enter valid age")
 
@@ -44,7 +43,6 @@ while True:
     
     else:
         print('we dont have that movie u r looking for "boi"!')
-
 
 """        # check user age
         if age >= films[choice][0]:
