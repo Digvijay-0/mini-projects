@@ -3,14 +3,14 @@ print("Welcome", name, "to this adventure")
 
 
 def swim_across():
-
     q1 = (
         input(
-            "You cross a river, Your cloths are wet. Soon its gooing to be dusk \n Would you like to move forward or stay till dawn (stay/walk) : "
+            "You cross a river, Your cloths are wet. \nSoon its gooing to be dusk \n Would you like to move forward or stay till dawn (stay/walk) : "
         )
         .lower()
         .strip()
     )
+    print("____________________________________________________________")
     if q1 == "stay":
         print("You were poison by snake, \nYou are ☠️")
 
@@ -20,6 +20,7 @@ def swim_across():
             .lower()
             .strip()
         )
+        print(" ")
         if q2 == "yes":
             q3 = (
                 input(
@@ -46,12 +47,12 @@ def swim_across():
 
 ans = (
     input(
-        "you are on dirt road, it has come to an end You can only go left or right. \nWhich way would you choose? "
+        "you are on dirt road, it has come to an end You can only go left or right. \nWhich way would you choose? : "
     )
     .lower()
     .strip()
 )
-
+print(" ")
 if ans == "right":
     ans = (
         input(
@@ -60,6 +61,7 @@ if ans == "right":
         .lower()
         .strip()
     )
+    print(" ")
     if ans == "walk":
         ans = (
             input(
@@ -69,7 +71,7 @@ if ans == "right":
             .strip()
         )
         if ans == "walk":
-            print("Your ran out of water, you cant move further")
+            print("Your ran out of water, you cant move further ☠️")
         elif ans == "swim":
             swim_across()
         else:
@@ -84,19 +86,16 @@ if ans == "right":
 elif ans == "left":
     ans1 = (
         input(
-            "There is a old wooden bridge, would you like to move forward or just go back to main road, \nEnter "
-            "walk"
-            " to move forward or "
-            "back"
-            " to return to main road "
+            """There is a old wooden bridge, would you like to move forward or just go back to main road, \nEnter "walk" to move forward or "back" to return to main road: """
         )
         .strip()
         .lower()
     )
+    print(" ")
     if ans1 == "walk":
         ans1 = (
             input(
-                "The bridge start to swing as intensity of wind is increase and one of wooden step breaks, You dont know whether the you will be able to make it \nwould you like to continue or jump in flowing water below (walk/jump) "
+                "The bridge start to swing as intensity of wind is increase and one of wooden steps breaks, \nYou dont know whether the you will be able to make it \nwould you like to continue or jump in flowing water below (walk/jump): "
             )
             .strip()
             .lower()
@@ -105,12 +104,12 @@ elif ans == "left":
             swim_across()
         elif ans1 == "walk":
             print(
-                "You foot stuck in one of the plank of bridge, as you try to remove it the bridge ropes breaks \n Your foot is stuck and you smash to a cliff"
+                "You foot stuck in one of the plank of bridge, as you try to remove it the bridge ropes breaks \n Your foot is stuck and you smash to a cliff ☠️"
             )
         else:
             print("Not valid option, \nYou Loose☠️")
     elif ans1 == "back":
-        print("You see a small girl crying and you loose")
+        print("You see a small girl crying and you loose ☠️")
 
     else:
         print("Not valid option, \nYou Loose☠️")
