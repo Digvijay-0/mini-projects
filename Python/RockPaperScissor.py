@@ -1,6 +1,5 @@
 import random
 
-
 weapons = ["Rock", "Paper", "Scissor"]
 
 while True:
