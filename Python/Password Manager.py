@@ -1,3 +1,13 @@
+from cryptography.fernet import Fernet
+
+"""  #TO CREATE A KEY FILE
+def create_key():
+    key = Fernet.generate_key()
+    with open("key.key", "wb") as key_file:
+        key_file.write(key)
+create_key()"""
+
+
 def add():
     name = input("Name : ")
     pswd = input("Password : ")
