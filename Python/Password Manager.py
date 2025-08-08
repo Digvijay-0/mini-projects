@@ -8,11 +8,26 @@ def create_key():
 create_key()"""
 
 
+def load_key():
+    file = open("key.key", "rb")
+    key = file.read()
+    file.close()
+    return key
+
+
+# master_pswd = input("Whats your master password : ")
+# key = load_key() + master_pswd.encode()
+# fer = Fernet(key)      "This part is way tougher"
+
+key = load_key()
+fer = Fernet(key)
+
+
 def add():
     name = input("Name : ")
     pswd = input("Password : ")
     with open("password.txt", "a") as p:
-        p.write(name + " | " + pswd + "\n")
+        p.write(name + " | " + fer.encrypt(pswd.encode()).decode() + "\n")
 
 
 def view():
@@ -20,7 +35,12 @@ def view():
         for i in p.readlines():
             data = i.rstrip()
             user, password = data.split("|")
-            print("User : ", user, "| Password : ", password)
+            print(
+                "User : ",
+                user,
+                "| Password : ",
+                fer.decrypt(password.encode()).decode(),
+            )
 
 
 while True:
