@@ -28,7 +28,6 @@ def player_move(icon):
         print()
         print("enter in valid space")
 
-
 def win(icon):
     if (
         (board[0] == icon and board[1] == icon and board[2] == icon)
